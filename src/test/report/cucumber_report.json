@@ -1,0 +1,113 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "testing-addition-functionality;scenario-outline-name:-adding-10-and-20-makes-30",
+        "keyword": "Scenario Outline",
+        "line": 10,
+        "name": "Scenario Outline name: Adding 10 and 20 makes 30",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "First number is 10",
+            "match": {
+              "location": "features\\steps-defintions\\test_steps.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1022000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "Add a second number 20",
+            "match": {
+              "location": "features\\steps-defintions\\test_steps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 126800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "I get a correct total 30",
+            "match": {
+              "location": "features\\steps-defintions\\test_steps.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 103900
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testing-addition-functionality;scenario-outline-name:-adding-10-and-290-makes-300",
+        "keyword": "Scenario Outline",
+        "line": 11,
+        "name": "Scenario Outline name: Adding 10 and 290 makes 300",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "First number is 10",
+            "match": {
+              "location": "features\\steps-defintions\\test_steps.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 70900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "Add a second number 290",
+            "match": {
+              "location": "features\\steps-defintions\\test_steps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 60600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "I get a correct total 300",
+            "match": {
+              "location": "features\\steps-defintions\\test_steps.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 62999
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "testing-addition-functionality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Testing Addition functionality",
+    "tags": [],
+    "uri": "features\\test.feature"
+  }
+]

@@ -1,0 +1,1 @@
+> npx cucumber-js -f json:test/report/cucumber_report.json
