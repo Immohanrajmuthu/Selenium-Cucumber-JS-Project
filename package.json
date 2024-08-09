@@ -4,17 +4,17 @@
 
         "chromedriver": "latest",
 
-        "page-object-pattern": "latest",
-
         "selenium-webdriver": "latest"
 
     },
 
     "devDependencies": {
 
-        "@cucumber/cucumber": "10.8.0",
+        "@cucumber/cucumber": "^10.8.0",
 
-        "cucumber-html-reporter": "^6.0.0"
+        "cucumber-html-reporter": "^6.0.0",
+
+        "geckodriver": "^4.4.2"
 
     },
 

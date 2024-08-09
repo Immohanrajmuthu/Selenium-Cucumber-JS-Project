@@ -1,7 +1,6 @@
-// features/support/hooks.js
-const { Before, After, BeforeAll, AfterAll } = require('@cucumber/cucumber');
+const { Before, After, BeforeAll, AfterAll, setDefaultTimeout } = require('@cucumber/cucumber');
 const { Builder, Capabilities } = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome');
+setDefaultTimeout(30000); // Set the default timeout to 30 seconds
 
 let driver;
 
@@ -9,15 +8,23 @@ BeforeAll(async function () {
     try {
         console.log('Setting up WebDriver');
         // This hook will run once before all scenarios
+        // Edge
         const capabilities = Capabilities.edge()
         capabilities.set('edgeoptions', {'w3c':false})
-        driver =  new Builder().withCapabilities(capabilities).build()
-       // const options = new chrome.Options();
-        // Uncomment the line below if you want to run Chrome in headless mode
-        // options.addArguments('--headless');
-        
-      //  driver = await new Builder().forBrowser('chrome').setChromeOptions(options).build();
-        this.driver = driver;
+        driver =  await new Builder().withCapabilities(capabilities).build()
+        await driver.manage().window().maximize();
+
+        // Chrome
+        //  const capabilities = Capabilities.chrome()
+        //  capabilities.set('chromeoptions', {'w3c':false})
+        //  driver = await new Builder().withCapabilities(capabilities).build()
+
+        //  const capabilities = Capabilities.firefox()
+        //  capabilities.set('fireboxoptions', {'w3c':false})
+        //  driver = await new Builder().withCapabilities(capabilities).build()
+         
+         this.driver = driver;
+
         console.log('WebDriver setup completed');
     } catch (error) {
         console.error('Error in BeforeAll hook:', error);
@@ -29,7 +36,8 @@ AfterAll(async function () {
     try {
         // This hook will run once after all scenarios
         if (driver) {
-          await driver.quit();
+         //  driver.quit();
+          console.log('After all scenario: WebDriver Closed');
         }
     } catch (error) {
         console.error('Error in AfterAll hook:', error);
