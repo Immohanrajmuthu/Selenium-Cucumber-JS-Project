@@ -1,1 +1,6 @@
-> npx cucumber-js -f json:test/report/cucumber_report.json
+npm run cucumber src\features\assessment1.feature
+
+
+To generate report:
+npx cucumber-js src\features\assessment1.feature -f json:test/report/cucumber_report.json
+$ cucumber-js src/features/ -f json:test/report/cucumber_report.json

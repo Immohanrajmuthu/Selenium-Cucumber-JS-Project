@@ -4,9 +4,15 @@ class Helper {
     constructor(driver){
         this.#driver = driver
     }
+
     async findAndClick(locator, timeout = 5000) {
-        await this.#driver.wait(until.elementLocated(locator), timeout);
-        await this.#driver.findElement(locator).click();
+        try {
+            await this.#driver.wait(until.elementLocated(locator), timeout);
+            await this.#driver.findElement(locator).click();
+        } catch (error) {
+            console.log("Element not found, continuing with the script.")
+        }
+      
     }
 
     async moveAndClick(targetElement, locator, timeout = 10000) {
@@ -26,6 +32,17 @@ class Helper {
 
         // Move to the element (hover)
         await actions.move({origin: element}).perform();
+    }
+
+    async elementIsVisible(locator, timeout = 10000) {
+        try {
+            await this.#driver.wait(until.elementIsVisible(locator), timeout);
+            return true
+        } catch (error) {
+            console.log("Element not found, continuing with the script.")
+            return false
+        }
+      
     }
 }
 

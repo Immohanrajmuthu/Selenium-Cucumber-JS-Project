@@ -3,20 +3,22 @@ const assert = require('assert');
 const HomePage = require('../../test/pages/HomePage');
 const WelcomePage = require('../../test/pages/WelcomePage');
 const LoginPage = require('../../test/pages/LoginPage');
+const CartPage = require("../../test/pages/CartPage");
 
-const { CartPage } = require("../../test/pages/CartPage");
-
-   
   Given('User is in the best buy home page', async function () {
     await this.driver.get('https://www.bestbuy.com')
+    const welcomePage = new WelcomePage(this.driver)
+    await welcomePage.clickUSLinkImage()
   }); 
 
-  When('User add a product into cart', async function () {
-    // Write code here that turns the phrase above into concrete actions
+  When('User search a {word} from the home page', async function (product) {
     const homePage = new HomePage(this.driver)
-    const welcomePage = new WelcomePage(this.driver)
+    await homePage.closeSurveyWindow()
+    await homePage.searchProduct(product)
+  });
 
-    await welcomePage.clickUSLinkImage()
+  When('User add a product into cart', async function () {
+    const homePage = new HomePage(this.driver)
     await homePage.addProductIntoCart()
   });
 

@@ -1,14 +1,19 @@
 const{By} = require('selenium-webdriver');
+const Helper = require('../pages/helper/Helper')
 
 class WelcomePage {
+    #helper
+    #usLinkImage
+
     constructor(driver) {
         this.driver = driver;
+        this.#helper = new Helper(driver)
+
+        this.#usLinkImage = By.className('us-link');
     }
 
-    usLinkImage = By.className('us-link');
-
     async clickUSLinkImage() {
-        await this.driver.findElement(this.usLinkImage).click();
+        this.#helper.findAndClick(this.#usLinkImage)
     }
 }
 

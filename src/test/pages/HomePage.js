@@ -10,6 +10,8 @@ class HomePage {
     #skuItemList
     #goToCartButton
     #addToCartButton
+    #surveyWindow
+    #surveyNoThanksButton
     #driver
     #helper
     #welcomePage
@@ -25,6 +27,8 @@ class HomePage {
         this.#skuItemList = By.className('sku-item-list')
         this.#addToCartButton = By.className('fulfillment-add-to-cart-button')
         this.#goToCartButton = By.linkText('Go to Cart')
+        this.#surveyWindow = By.id('survey_blue_border')
+        this.#surveyNoThanksButton = By.id('surveyNoThanksButton')
     }
 
      
@@ -43,7 +47,13 @@ class HomePage {
         // await this.#driver.wait(until.elementLocated(this.#goToCartButton), 10000);
         // await this.#driver.findElement(this.#goToCartButton).click()
     }
-;
+
+    async closeSurveyWindow(){
+        let visible = await this.#helper.elementIsVisible(this.#surveyWindow)
+        if(visible){
+            await this.#helper.findAndClick(this.#surveyNoThanksButton)
+        }
+    }
     // async findAndClick(locator, timeout = 5000) {
     //     await this.#driver.wait(until.elementLocated(locator), timeout);
     //     await this.#driver.findElement(locator).click();
@@ -61,20 +71,23 @@ class HomePage {
         await this.clickOnSignInButton(this.#signInButton)
     }
 
-    async addProductIntoCart() {
-       // Find and Click on Searchbox
-      // await this.#driver.wait(until.elementLocated(this.#searchInputBox), 5000)
-      // await this.#driver.findElement(this.#searchInputBox).click()
+    async searchProduct(procuct_name){
+        // Find and Click on Searchbox
+        // await this.#driver.wait(until.elementLocated(this.#searchInputBox), 5000)
+        // await this.#driver.findElement(this.#searchInputBox).click()
        await this.#helper.findAndClick(this.#searchInputBox)
 
        // Enter product name to search
        // await this.#driver.findElement(this.#searchInputBox).sendKeys('Computer')
-       await this.#helper.findAndEnterValue(this.#searchInputBox, 'Computer')
+       await this.#helper.findAndEnterValue(this.#searchInputBox, procuct_name)
 
        //Click on search button
        // await this.#driver.findElement(this.#searchButton).click()
        await this.#helper.findAndClick(this.#searchButton)
 
+    }
+
+    async addProductIntoCart() {
        // Wait for product list to be dispalyed
       // await this.driver.wait(until.elementLocated(this.skuItemList), 5000);
        let skulist = await this.#driver.findElement(this.#skuItemList)

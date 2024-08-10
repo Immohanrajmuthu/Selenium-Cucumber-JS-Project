@@ -10,16 +10,24 @@
         "name": "Scenario Outline name: Adding 10 and 20 makes 30",
         "steps": [
           {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 929200
+            }
+          },
+          {
             "arguments": [],
             "keyword": "Given ",
             "line": 4,
             "name": "First number is 10",
             "match": {
-              "location": "features\\steps-defintions\\test_steps.js:4"
+              "location": "src\\features\\step_definitions\\test_steps.js:4"
             },
             "result": {
               "status": "passed",
-              "duration": 1022000
+              "duration": 372299
             }
           },
           {
@@ -28,11 +36,11 @@
             "line": 5,
             "name": "Add a second number 20",
             "match": {
-              "location": "features\\steps-defintions\\test_steps.js:8"
+              "location": "src\\features\\step_definitions\\test_steps.js:8"
             },
             "result": {
               "status": "passed",
-              "duration": 126800
+              "duration": 541399
             }
           },
           {
@@ -41,11 +49,19 @@
             "line": 6,
             "name": "I get a correct total 30",
             "match": {
-              "location": "features\\steps-defintions\\test_steps.js:12"
+              "location": "src\\features\\step_definitions\\test_steps.js:12"
             },
             "result": {
               "status": "passed",
-              "duration": 103900
+              "duration": 388200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1157399
             }
           }
         ],
@@ -60,16 +76,24 @@
         "name": "Scenario Outline name: Adding 10 and 290 makes 300",
         "steps": [
           {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1878199
+            }
+          },
+          {
             "arguments": [],
             "keyword": "Given ",
             "line": 4,
             "name": "First number is 10",
             "match": {
-              "location": "features\\steps-defintions\\test_steps.js:4"
+              "location": "src\\features\\step_definitions\\test_steps.js:4"
             },
             "result": {
               "status": "passed",
-              "duration": 70900
+              "duration": 245000
             }
           },
           {
@@ -78,11 +102,11 @@
             "line": 5,
             "name": "Add a second number 290",
             "match": {
-              "location": "features\\steps-defintions\\test_steps.js:8"
+              "location": "src\\features\\step_definitions\\test_steps.js:8"
             },
             "result": {
               "status": "passed",
-              "duration": 60600
+              "duration": 254699
             }
           },
           {
@@ -91,11 +115,19 @@
             "line": 6,
             "name": "I get a correct total 300",
             "match": {
-              "location": "features\\steps-defintions\\test_steps.js:12"
+              "location": "src\\features\\step_definitions\\test_steps.js:12"
             },
             "result": {
               "status": "passed",
-              "duration": 62999
+              "duration": 428900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1023499
             }
           }
         ],
@@ -108,6 +140,6 @@
     "keyword": "Feature",
     "name": "Testing Addition functionality",
     "tags": [],
-    "uri": "features\\test.feature"
+    "uri": "src\\features\\test.feature"
   }
 ]

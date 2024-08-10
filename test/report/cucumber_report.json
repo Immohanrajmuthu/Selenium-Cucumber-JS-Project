@@ -1,0 +1,223 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-to-the-application;checkout-workflow",
+        "keyword": "Scenario Outline",
+        "line": 13,
+        "name": "Checkout workflow",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1310500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User is in the best buy home page",
+            "match": {
+              "location": "src\\features\\step_definitions\\assessment1_steps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1026712099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "User search a Computer from the home page",
+            "match": {
+              "location": "src\\features\\step_definitions\\assessment1_steps.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14846808900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "User add a product into cart",
+            "match": {
+              "location": "src\\features\\step_definitions\\assessment1_steps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 296428199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "User navigate to cart page",
+            "match": {
+              "location": "src\\features\\step_definitions\\assessment1_steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10755845199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "User click on the Checkout button in the Cart page",
+            "match": {
+              "location": "src\\features\\step_definitions\\assessment1_steps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1331028400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "User redirected to the Login page",
+            "match": {
+              "location": "src\\features\\step_definitions\\assessment1_steps.js:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5360351200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 594900
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-to-the-application;checkout-workflow",
+        "keyword": "Scenario Outline",
+        "line": 14,
+        "name": "Checkout workflow",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 424500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User is in the best buy home page",
+            "match": {
+              "location": "src\\features\\step_definitions\\assessment1_steps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3688785499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "User search a Phone from the home page",
+            "match": {
+              "location": "src\\features\\step_definitions\\assessment1_steps.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5797402800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "User add a product into cart",
+            "match": {
+              "location": "src\\features\\step_definitions\\assessment1_steps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 39408300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "User navigate to cart page",
+            "match": {
+              "location": "src\\features\\step_definitions\\assessment1_steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8541799299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "User click on the Checkout button in the Cart page",
+            "match": {
+              "location": "src\\features\\step_definitions\\assessment1_steps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1382812100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "User redirected to the Login page",
+            "match": {
+              "location": "src\\features\\step_definitions\\assessment1_steps.js:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3378495000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 399100
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-to-the-application",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login to the application",
+    "tags": [],
+    "uri": "src\\features\\assessment1.feature"
+  }
+]
