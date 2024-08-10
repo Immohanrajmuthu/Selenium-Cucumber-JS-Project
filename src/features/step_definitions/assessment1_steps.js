@@ -1,7 +1,9 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
 const assert = require('assert'); 
-const HomePage = require('../../test/pages/HomePage')
+const HomePage = require('../../test/pages/HomePage');
 const WelcomePage = require('../../test/pages/WelcomePage');
+const LoginPage = require('../../test/pages/LoginPage');
+
 const { CartPage } = require("../../test/pages/CartPage");
 
    
@@ -21,14 +23,16 @@ const { CartPage } = require("../../test/pages/CartPage");
   When('User navigate to cart page', async function () {
     const homePage = new HomePage(this.driver)
     await homePage.clickOnGoToCartButton()
+    // Add validation for cart page
   });
 
-  When('User navigate to the Checkout page', async function() {
+  When('User click on the Checkout button in the Cart page', async function() {
     const cartPage = new CartPage(this.driver)
     await cartPage.clickOnCheckOutButton()
   })
   
-  Then('I entered into the home page', function () {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+  Then('User redirected to the Login page', async function () {
+    const loginPage = new LoginPage(this.driver)
+    let title = await loginPage.getTitle()
+    assert.equal(title, 'Sign In to Best Buy', "Validation failed")
   });
