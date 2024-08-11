@@ -1,6 +1,6 @@
-Feature: Search and Add to Cart -> Checkout workflow 
+Feature: Video and Modal window validation
 
-Scenario Outline: Checkout as Guest user
+Scenario Outline: Validate the 
     Given User is in the best buy home page
     When User search a <product> from the home page
     And User add a product into cart

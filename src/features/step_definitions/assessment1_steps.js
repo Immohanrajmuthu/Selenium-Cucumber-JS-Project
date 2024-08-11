@@ -15,7 +15,7 @@ const CartPage = require("../../test/pages/CartPage");
     const homePage = new HomePage(this.driver)
     await homePage.closeSurveyWindow()
     await homePage.searchProduct(product)
-    // Add a validation
+    // Add a validation 
   });
 
   When('User add a product into cart', async function () {
