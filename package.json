@@ -20,9 +20,8 @@
 
     "scripts": {
 
-        "cucumber": "cucumber-js",
-        "test": "cucumber-js src\\features\\assessment1.feature --format json:test/reports/cucumber_report.json && node generateReport.js"
-
+        "test": "cucumber-js src\\features\\assessment3.feature"
+       
     }
 
 }

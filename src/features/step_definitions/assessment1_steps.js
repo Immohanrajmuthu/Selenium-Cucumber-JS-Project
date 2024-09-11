@@ -4,6 +4,7 @@ const HomePage = require('../../test/pages/HomePage');
 const WelcomePage = require('../../test/pages/WelcomePage');
 const LoginPage = require('../../test/pages/LoginPage');
 const CartPage = require("../../test/pages/CartPage");
+const Helper = require('../../test/pages/helper/Helper')
 
   Given('User is in the best buy home page', async function () {
     await this.driver.get('https://www.bestbuy.com')
@@ -13,7 +14,8 @@ const CartPage = require("../../test/pages/CartPage");
 
   When('User search a {word} from the home page', async function (product) {
     const homePage = new HomePage(this.driver)
-    await homePage.closeSurveyWindow()
+    const helper = new Helper(this.driver)
+    // await helper.closeSurveyWindow()
     await homePage.searchProduct(product)
     // Add a validation 
   });

@@ -13,7 +13,7 @@ class WelcomePage {
     }
 
     async clickUSLinkImage() {
-        this.#helper.findAndClick(this.#usLinkImage)
+        this.#helper.checkVisibilityAndClick(this.#usLinkImage)
     }
 }
 

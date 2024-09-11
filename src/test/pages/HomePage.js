@@ -10,8 +10,6 @@ class HomePage {
     #skuItemList
     #goToCartButton
     #addToCartButton
-    #surveyWindow
-    #surveyNoThanksButton
     #driver
     #helper
     #welcomePage
@@ -27,8 +25,6 @@ class HomePage {
         this.#skuItemList = By.className('sku-item-list')
         this.#addToCartButton = By.className('fulfillment-add-to-cart-button')
         this.#goToCartButton = By.linkText('Go to Cart')
-        this.#surveyWindow = By.id('survey_blue_border')
-        this.#surveyNoThanksButton = By.id('surveyNoThanksButton')
     }
 
      
@@ -43,17 +39,11 @@ class HomePage {
     // }
 
     async clickOnGoToCartButton(){
-        await this.#helper.findAndClick( this.#goToCartButton, 10000)
+        await this.#helper.checkVisibilityAndClick( this.#goToCartButton, 10000)
         // await this.#driver.wait(until.elementLocated(this.#goToCartButton), 10000);
         // await this.#driver.findElement(this.#goToCartButton).click()
     }
 
-    async closeSurveyWindow(){
-        let visible = await this.#helper.elementIsVisible(this.#surveyWindow)
-        if(visible){
-            await this.#helper.findAndClick(this.#surveyNoThanksButton)
-        }
-    }
     // async findAndClick(locator, timeout = 5000) {
     //     await this.#driver.wait(until.elementLocated(locator), timeout);
     //     await this.#driver.findElement(locator).click();
@@ -67,7 +57,7 @@ class HomePage {
     
     async navigateToLoginPage() {
         await this.#welcomePage.clickUSLinkImage()
-        await this.#helper.findAndClick(this.#accountDropDownButton)
+        await this.#helper.checkVisibilityAndClick(this.#accountDropDownButton)
         await this.clickOnSignInButton(this.#signInButton)
     }
 
@@ -75,7 +65,7 @@ class HomePage {
         // Find and Click on Searchbox
         // await this.#driver.wait(until.elementLocated(this.#searchInputBox), 5000)
         // await this.#driver.findElement(this.#searchInputBox).click()
-       await this.#helper.findAndClick(this.#searchInputBox)
+       await this.#helper.checkVisibilityAndClick(this.#searchInputBox)
 
        // Enter product name to search
        // await this.#driver.findElement(this.#searchInputBox).sendKeys('Computer')
@@ -83,7 +73,7 @@ class HomePage {
 
        //Click on search button
        // await this.#driver.findElement(this.#searchButton).click()
-       await this.#helper.findAndClick(this.#searchButton)
+       await this.#helper.checkVisibilityAndClick(this.#searchButton)
 
     }
 
@@ -94,10 +84,11 @@ class HomePage {
        let skuListItems = await skulist.findElements(By.css('li'))
        let targetSkuItem
        if(skuListItems.length){
-            targetSkuItem = skuListItems[0]
+            targetSkuItem = skuListItems[1]
+
        }
      
-      this.#helper.moveAndClick(targetSkuItem, this.#addToCartButton) 
+      this.#helper.fetchAndClick(targetSkuItem, this.#addToCartButton) 
 
     }
 }

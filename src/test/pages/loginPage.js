@@ -8,7 +8,6 @@ class LoginPage {
 
     }
 
-
     async getTitle(){
         await this.#driver.wait(until.elementLocated(this.#SignInButton), 10000);
         return await this.#driver.getTitle()
